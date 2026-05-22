@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fotogram 🍒</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="stage-decorations">
+        <div class="stage-lights"></div>
+
+        <svg class="cherry-item c-left" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <path d="M50,15 Q35,35 25,55 M50,15 Q65,40 75,55 M45,15 Q32,5 20,18" stroke="#4ade80" stroke-width="4" fill="none" stroke-linecap="round"/>
+            <path d="M20,18 Q32,15 45,15 Q32,5 20,18" fill="#22c55e"/>
+            <circle cx="25" cy="65" r="18" fill="#ff1493"/>
+            <circle cx="20" cy="58" r="5" fill="#ffffff" opacity="0.8"/>
+            <circle cx="72" cy="65" r="18" fill="#ff1493"/>
+            <circle cx="67" cy="58" r="5" fill="#ffffff" opacity="0.8"/>
+        </svg>
+        
+        <svg class="cherry-item c-right" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <path d="M50,15 Q35,35 25,55 M50,15 Q65,40 75,55 M45,15 Q32,5 20,18" stroke="#4ade80" stroke-width="4" fill="none" stroke-linecap="round"/>
+            <path d="M20,18 Q32,15 45,15 Q32,5 20,18" fill="#22c55e"/>
+            <circle cx="25" cy="65" r="18" fill="#ff1493"/>
+            <circle cx="20" cy="58" r="5" fill="#ffffff" opacity="0.8"/>
+            <circle cx="72" cy="65" r="18" fill="#ff1493"/>
+            <circle cx="67" cy="58" r="5" fill="#ffffff" opacity="0.8"/>
+        </svg>
+
+        <div class="star s1">★</div>
+        <div class="star s2">★</div>
+        <div class="star s3">★</div>
+        <div class="note n1">♪</div>
+        <div class="note n2">♫</div>
+    </div>
+
+    <main class="app-container">
+        <header class="app-header">
+            <div class="hair-container">
+                <span class="hair-clip left">★</span>
+                <div class="cherry-fringe"></div>
+                <span class="hair-clip right">★</span>
+            </div>
+            <h1>Fotogram<span>🍒</span></h1>
+        </header>
+
+        <div class="interface-grid">
+            <section class="camera-section">
+                <div class="backstage-mirror">
+                    <div class="mirror-bulbs">
+                        <span></span><span></span><span></span><span></span><span></span><span></span>
+                    </div>
+                    <div class="camera-box">
+                        <video id="camera" autoplay></video>
+                        <canvas id="overlay"></canvas>
+                    </div>
+                </div>
+            </section>
+
+            <section class="controls-section">
+                <div class="avatar-trio-container">
+                    <img src="https://i.pinimg.com/236x/2e/c5/6c/2ec56c9d56d048404bece5a300039404.jpg" alt="Cerejinha 1" class="cherry-avatar a1">
+                </div>
+
+                <h2>Seus Efeitos! 🎤</h2>
+                
+                <div class="filter-grid">
+                    <button onclick="capturarPhoto('normal')" class="btn-filter btn-main">🌸 CAPTURAR SELFIE</button>
+                    <button onclick="capturarPhoto('cinza')" class="btn-filter">Efeito Cinza</button>
+                    <button onclick="capturarPhoto('antiga')" class="btn-filter">Efeito Antigo</button>
+                    <button onclick="capturarPhoto('desfoque')" class="btn-filter">Efeito Desfoque</button>
+                    <button onclick="capturarPhoto('brilho')" class="btn-filter">Efeito Brilho</button>
+                    <button onclick="capturarPhoto('saturacao')" class="btn-filter">Efeito Saturação</button>
+                    <button onclick="capturarPhoto('opacity')" class="btn-filter">Efeito Opacidade</button>
+                    <button onclick="capturarPhoto('inverter')" class="btn-filter">Efeito Inverter</button>
+                    
+                    <button onclick="setAcessorio('hello')" class="btn-filter" style="border-color: #ff69b4;">🎀 Hello Kitty</button>
+                    <button onclick="setAcessorio('morango')" class="btn-filter" style="border-color: #ff4500;">🍓 Morango</button>
+                    <button onclick="setAcessorio('bigode')" class="btn-filter" style="border-color: #ffd700;">🥸 Bigode</button>
+                    <button onclick="setAcessorio('cachorro')" class="btn-filter" style="border-color: #1e90ff;">🐶 Cachorrinho</button>
+                    <button onclick="setAcessorio('nenhum')" class="btn-filter">❌ Limpar Filtro</button>
+                </div>
+            </section>
+        </div>
+
+        <section class="gallery-section">
+            <h2>🎸 Suas Fotos 🎸</h2>
+            <div id="photos" class="photos-grid"></div>
+        </section>
+    </main>
+
+    <script defer src="https://cdn.jsdelivr.net/npm/face-api.js@0.22.2/dist/face-api.min.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>
